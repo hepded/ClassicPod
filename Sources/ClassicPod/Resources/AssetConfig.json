@@ -1,0 +1,8 @@
+{
+  "model": null,
+  "bodyNode": "Body",
+  "screenNode": "Screen",
+  "wheelNode": "ClickWheel",
+  "centerNode": "CenterButton",
+  "note": "Built-in complete original 3D ClassicPod with back, case seam, wheel depth, headphone jack, Hold slider, 30-pin dock and engraving. Optional external model: front +Z, body 6 x 10, wheel local XY radius 2 centered (0,-2.15,0.56), screen (0,2,0.56), size 4.6 x 3.45."
+}
