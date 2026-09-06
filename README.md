@@ -18,7 +18,8 @@ Native macOS music player with a fully rotatable 3D body, click wheel, local aud
 - Spotify: Liked Songs, плейлисты и Connect; управление без Apple Events по умолчанию.
 - SwiftUI + AppKit, SceneKit/SpriteKit, AVFoundation. Внешних пакетных зависимостей нет.
 
-**Статус:** личная beta, не официальный продукт Apple или Spotify. Проверенная локальная сборка — Apple Silicon; deployment target macOS 14 не означает проверку на всех версиях macOS. Приложение не нотарифицировано. [Ограничения и проверки](VALIDATION.md) · [Изменения](CHANGELOG.md) · [Приватность](PRIVACY.md) · [Подготовка публикации](docs/PUBLISHING.md).
+**Статус:** личная beta, не официальный продукт Apple или Spotify. Проверенная локальная сборка — Apple Silicon; deployment target macOS 14 не означает проверку на всех версиях macOS. Приложение не нотарифицировано. [Ограничения и проверки](VALIDATION.md) · [Изменения](CHANGELOG.md) · [Приватность](PRIVACY.md)
+.
 
 ## Запуск
 
@@ -88,17 +89,6 @@ SCNView / AppKit → InputEvent → AppStore / MenuNavigator
 
 Импорт проверяет воспроизводимость AVFoundation, пропускает повреждённые файлы, не следует directory symlinks, использует bookmark для перемещённых файлов. Поддержка конкретных MP3/M4A/FLAC/WAV зависит от кодека внутри контейнера и системного декодера. Локальная очередь хранится отдельно от AVQueuePlayer; Previous после 3 секунд возвращает начало трека. Gapless и сквозное микширование не реализованы.
 
-## Проверки
-
-```sh
-bash scripts/check.sh
-swift test
-xcodebuild -project ClassicPod.xcodeproj -scheme ClassicPod -destination 'platform=macOS' test
-```
-
-Первый сценарий работает без XCTest и запускает тот же набор core assertions, а также интеграционные проверки с URLProtocol и временной аудиобиблиотекой. Две последние команды требуют XCTest из полного Xcode. Интеграционные проверки не открывают Spotify, не используют реальные credentials и не изменяют пользовательскую библиотеку.
-
-Список выполненных проверок и остающихся ограничений: [VALIDATION.md](VALIDATION.md).
 
 ## Готовая 3D-модель
 
